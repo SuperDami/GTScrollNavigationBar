@@ -115,7 +115,7 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
     }
     
     // Don't try to scroll navigation bar if there's not enough room
-    if (self.scrollView.frame.size.height + CGRectGetMaxY(self.frame) >=
+    if (self.scrollView.frame.size.height + CGRectGetMaxY(self.frame) + self.scrollView.contentOffset.y >=
         self.scrollView.contentSize.height) {
         return;
     }

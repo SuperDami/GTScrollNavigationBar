@@ -143,7 +143,7 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
     // NOTE: plus 1px to prevent the navigation bar disappears in iOS < 7
     
     CGFloat contentInsetTop = self.scrollView.contentInset.top;
-    bool isBouncePastTopEdge = contentOffsetY < -contentInsetTop;
+    bool isBouncePastTopEdge = contentOffsetY <= -contentInsetTop;
     if (isBouncePastTopEdge && CGRectGetMinY(frame) == maxY) {
         self.lastContentOffsetY = contentOffsetY;
         return;
